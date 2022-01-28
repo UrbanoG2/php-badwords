@@ -9,13 +9,11 @@
 
     $textLength = strlen($text);
 
-    $censorship = $_GET["censored"]; //restituirà "ipsum"
+    $censorship = $_GET["censored"]; //restituirà quello che scrivo sopra
 
     $textCensored = str_replace($censorship, "***", $text);
 
     $textLengthCensored = strlen($textCensored);
-
-    
     
 ?>
 
@@ -30,14 +28,17 @@
 <body>
     <p>
         <?php echo $text ?> 
-        <h1>Lunghezza del testo: <?php echo $textLength ?></h1>
     </p>
+
+    <h1>Lunghezza del testo: <?php echo $textLength ?></h1>
 
     PAROLA DA CENSURARE: <?php echo $censorship ?>
 
     <p>
         <?php echo $textCensored ?> 
-        <h1>Lunghezza del testo: <?php echo $textLengthCensored ?></h1>
     </p>
+
+    <h1>Lunghezza del testo: <?php echo $textLengthCensored ?></h1>
+
 </body>
 </html>
