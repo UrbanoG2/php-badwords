@@ -14,6 +14,10 @@
     $textCensored = str_replace($censorship, "***", $text);
 
     $textLengthCensored = strlen($textCensored);
+
+    $newString = "Paragraph with random words just for testing a couple of things";
+
+    $arrayExploded = explode(" ", $newString);
     
 ?>
 
@@ -39,6 +43,52 @@
     </p>
 
     <h1>Lunghezza del testo: <?php echo $textLengthCensored ?></h1>
+
+    <hr>
+
+    <h1> ESPLODERE UNA STRINGA </h1>
+
+    <p>
+        <?php echo $newString ?>
+    </p>
+
+    <?php 
+        $arrayExploded;
+        var_dump($arrayExploded);
+
+        // $strCensored = strpos($text, $censorship);
+
+        // echo($strCensored);
+    ?>
+
+    <hr>
+
+
+    <h1>Recuperare la posizione di una stringa</h1>
+    <?php 
+
+        $arrFirstText = explode(",", $text);
+        var_dump($arrFirstText);
+        // $strCensored = strpos($text, $censorship);
+        // echo($strCensored);
+    ?>
+
+    <h2>Ora abbiamo l'array formato dal testo di sopra che, ad ogni virgola, diventa una stringa singola</h2>
+
+    <h4>Recuperiamo ora la posizione della parola censurata sopra all'interno del secondo elemento dell'array che è questo:</h4>
+
+    <?php 
+        $myString = $arrFirstText[1];
+        echo $myString;
+    ?>
+
+    <h3>Posizione</h3>
+
+    <?php
+        $censoredWord = strpos($myString, $censorship);
+        echo $censoredWord;
+    ?>
+
 
 </body>
 </html>
